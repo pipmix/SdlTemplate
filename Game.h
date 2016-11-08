@@ -1,5 +1,10 @@
 #pragma once
-#include "ObjectManager.h"
+#include <SDL.h>
+
+
+
+extern SDL_Window* g_window;
+extern SDL_Surface* g_surface;
 
 enum GameState{ GS_TitleScreen, GS_TitleMenu, GS_GameStart, GS_GameMenu};
 
@@ -8,13 +13,18 @@ class Game {
 
 public:
 			Game();
-	bool	Update(double dt);
+
+	bool	Run();
+	void	ProcessEvents();
+	void	Update();
 	void	Draw();
 	void	Load();
+	void	CleanUp();
 
 
 private:
 
 	GameState gameState;
-	ObjectManger objectManger;
+	bool m_isRunning;
+	SDL_Event m_event;
 };

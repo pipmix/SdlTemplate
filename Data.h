@@ -28,7 +28,8 @@ class Data {
 public:
 
 			Data();
-	bool	LoadImage(std::string fn);
+	//bool	LoadImage(std::string fn);
+bool Data::LoadImage(char * fn);
 
 private:
 
@@ -38,4 +39,4 @@ private:
 
 enum DATA_TEXTURES { DT_PLAYER, DT_EN1};
 
-Textures tt[12];
+//Textures tt[12];
