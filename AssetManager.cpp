@@ -10,7 +10,7 @@ AssetManager::~AssetManager()
 
 void AssetManager::Create()
 {
-
+	/*
 	Cleanup();
 
 	SDL_Renderer* Renderer = App::GetInstance()->GetRenderer();
@@ -30,6 +30,7 @@ void AssetManager::Create()
 	}
 
 	return true;
+	*/
 }
 
 bool AssetManager::LoadModel(std::string fn)

@@ -3,11 +3,11 @@
 
 class Timer {
 public:
-	
+	Timer();
 	void Update();
 	double GetDelta();
 private:
-	Timer();
+	
 	double m_prevTime;
 	double m_currentTime;
 	double m_deltaTime;

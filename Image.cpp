@@ -1,26 +1,52 @@
 #include "Image.h"
 
-Image::Image()
-{
+Image::Image(){
 
-		m_image = nullptr;
-
-		m_w = m_h = m_numTilesW = m_numTilesH = 0;
+	m_imageW = m_imageH = m_numCol = m_numRows = m_tileW = m_tileH = 0;
+	m_image = NULL;
+	m_isTileMap = false;
 
 	
 }
 
-Image::~Image()
-{
+Image::~Image(){
 	SDL_FreeSurface(m_image);
 }
 
-bool Image::LoadImage(std::string fn)
-{
-	return false;
+void Image::LoadImage(std::string fn){
+	m_name = fn;
+	std::string completePath = IMAGE_PATH + m_name;
+	
+	m_image = IMG_Load(completePath.c_str());
+	//m_image = IMG_Load("test.bmp");
+
+	if (m_image == NULL)SDL_Quit();
+	//printf( "Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError() );
 }
 
-SDL_Surface * Image::GetImage(std::string fn)
+SDL_Surface * Image::GetImage()
 {
-	return nullptr;
+	return m_image;
 }
+
+void Image::SetTileMapProp(int tW, int tH, int nC, int nR){
+	m_numCol = nC;
+	m_numRows = nR;
+	m_tileW = tW;
+	m_tileH = tH;
+	m_isTileMap = true;
+}
+
+/*	
+m_name = fn;
+	std::string completePath = IMAGE_PATH + m_name;
+	
+	SDL_Surface* temp = IMG_Load(completePath.c_str());
+	
+	m_image = SDL_ConvertSurface(temp, g_surface->format, NULL);
+	//m_image = IMG_Load("test.bmp");
+
+	if (m_image == NULL)SDL_Quit();
+	//printf( "Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError() );
+	SDL_FreeSurface(temp);
+*/

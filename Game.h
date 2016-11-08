@@ -1,7 +1,7 @@
 #pragma once
 #include <SDL.h>
-
-
+#include "Image.h"
+#include "Timer.h"
 
 extern SDL_Window* g_window;
 extern SDL_Surface* g_surface;
@@ -27,4 +27,14 @@ private:
 	GameState gameState;
 	bool m_isRunning;
 	SDL_Event m_event;
+	Image i01;
+	Image i02;
+	bool load = false;
+	Timer m_timer;
+
+
+	float x1 = 0.0f;
+	float y1 = 0.0f;
+	int x2 = 0;
+	int y2 = 0;
 };

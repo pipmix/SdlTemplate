@@ -3,8 +3,7 @@
 #include <SDL_image.h>
 #include <string>
 
-const std::string tPath = "C:/Box/Box Sync/Data/Images";
-const char* TexturePath = "C:/Box/Box Sync/Data/Images";
+
 
 extern SDL_Surface* g_surface;
 
