@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include "Image.h"
 #include "Timer.h"
+#include "Data.h"
 
 extern SDL_Window* g_window;
 extern SDL_Surface* g_surface;
@@ -31,6 +32,8 @@ private:
 	Image i02;
 	bool load = false;
 	Timer m_timer;
+
+	Data gameData;
 
 
 	float x1 = 0.0f;

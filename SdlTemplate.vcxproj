@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssetManager.h" />
+    <ClInclude Include="Assets.h" />
     <ClInclude Include="BassClasses.h" />
     <ClInclude Include="Data.h" />
     <ClInclude Include="Game.h" />

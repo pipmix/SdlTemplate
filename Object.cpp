@@ -39,3 +39,14 @@ void Object::Draw(){
 	//SDL_BlitSurface(Surf_Src, NULL, g_surface, &destRect);
 
 }
+
+
+void Object::SetImage(int num) {
+	imageNumber = num;
+	sourceRect = ASSET_IMG_PROPERTIES[imageNumber].GetSourceRect();
+
+	sourceRect.x = 0;
+	sourceRect.y = 0;
+	sourceRect.w = ASSET_IMG_PROPERTIES[imageNumber].tileWidth;
+	sourceRect.h = ASSET_IMG_PROPERTIES[imageNumber].tileHeight;
+}
